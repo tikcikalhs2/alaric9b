@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>RaceCraft Garage | Futuristic Interactive Deluxe Edition</title>
+
+  <style>
+    /* RESET */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* BODY */
+    body {
+      background: radial-gradient(circle at top, #004225, #001a10 80%);
+      color: #fff;
+      font-family: "Comic Sans MS", cursive, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      overflow-x: hidden;
+      padding: 25px;
+    }
+
+    /* TITLE */
+    h1 {
+      font-family: "Copperplate Gothic Bold", Copperplate, fantasy;
+      font-size: 3.5rem;
+      text-align: center;
+      color: #f5e500;
+      text-shadow: 0 0 25px #00ff6a, 0 0 40px #f5e500;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+      animation: glowPulse 2s infinite alternate;
+    }
+
+    @keyframes glowPulse {
+      from { text-shadow: 0 0 15px #00ff6a; }
+      to { text-shadow: 0 0 40px #f5e500; }
+    }
+
+    /* NAVBAR */
+    nav {
+      display: flex;
+      gap: 30px;
+      background: rgba(19, 101, 51, 0.8);
+      backdrop-filter: blur(8px);
+      border: 2px solid #00ff6a;
+      border-radius: 50px;
+      padding: 12px 40px;
+      margin-bottom: 50px;
+      box-shadow: 0 0 15px #00ff6a;
+      animation: fadeIn 1.5s ease;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 1.2rem;
+      transition: all 0.3s ease;
+      padding: 8px 16px;
+      border-radius: 20px;
+    }
+
+    nav a:hover {
+      background-color: #f5e500;
+      color: #004225;
+      transform: scale(1.1);
+      box-shadow: 0 0 20px #f5e500;
+    }
+
+    /* SECTION HEADER */
+    .section-header {
+      background: linear-gradient(90deg, #339966, #00ff6a);
+      color: #004225;
+      text-align: center;
+      padding: 15px;
+      border-radius: 10px;
+      font-size: 1.8rem;
+      box-shadow: 0 0 20px #00ff6a;
+      margin-bottom: 25px;
+      width: 90%;
+      max-width: 1300px;
+      text-transform: uppercase;
+    }
+
+    /* PRODUCT SECTION */
+    .product-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      background: rgba(19, 101, 51, 0.9);
+      border-radius: 15px;
+      box-shadow: 0 0 40px rgba(0, 255, 106, 0.4);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+      max-width: 1200px;
+      width: 100%;
+    }
+
+    .product-container:hover {
+      transform: scale(1.02);
+    }
+
+    .product-image {
+      flex: 1 1 50%;
+      text-align: center;
+      padding: 25px;
+      background: radial-gradient(circle, #0b6a3b, #003b1b);
+    }
+
+    .product-image img {
+      width: 90%;
+      max-width: 500px;
+      border-radius: 10px;
+      filter: drop-shadow(0 0 20px #00ff6a);
+      transition: transform 0.5s ease;
+    }
+
+    .product-image img:hover {
+      transform: scale(1.08) rotate(-2deg);
+    }
+
+    .product-info {
+      flex: 1 1 50%;
+      padding: 30px;
+    }
+
+    .product-name {
+      font-family: "Copperplate Gothic Bold";
+      font-size: 2rem;
+      color: #f5e500;
+      margin-bottom: 10px;
+      text-shadow: 0 0 10px #f5e500;
+    }
+
+    .product-price {
+      font-size: 1.4rem;
+      color: #004225;
+      background: #f5e500;
+      padding: 10px 20px;
+      border-radius: 30px;
+      font-weight: bold;
+      display: inline-block;
+      margin-bottom: 15px;
+      box-shadow: 0 0 15px #f5e500;
+    }
+
+    .product-details ul {
+      list-style-type: "🚗 ";
+      margin-left: 25px;
+    }
+
+    .product-details li {
+      margin-bottom: 8px;
+    }
+
+    .buy-button {
+      margin-top: 20px;
+      background: linear-gradient(90deg, #f5e500, #00ff6a);
+      color: #004225;
+      padding: 12px 30px;
+      border: none;
+      border-radius: 30px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 0 15px #00ff6a;
+      transition: all 0.3s ease;
+    }
+
+    .buy-button:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 30px #f5e500;
+    }
+
+    /* REVIEWS */
+    .reviews {
+      background: rgba(19, 101, 51, 0.9);
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 0 25px #00ff6a;
+      max-width: 1200px;
+      width: 100%;
+      margin-top: 40px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .reviews::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: conic-gradient(from 0deg, transparent, #00ff6a, #f5e500, transparent);
+      animation: spinGlow 6s linear infinite;
+      opacity: 0.2;
+    }
+
+    @keyframes spinGlow {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .reviews h2 {
+      text-align: center;
+      color: #f5e500;
+      font-size: 1.8rem;
+      margin-bottom: 25px;
+      text-shadow: 0 0 10px #00ff6a;
+    }
+
+    .review {
+      background: #1b7a47;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 15px;
+      box-shadow: inset 0 0 8px #0f3a1c;
+      position: relative;
+      z-index: 2;
+    }
+
+    .review strong {
+      display: block;
+      color: #fff;
+      margin-bottom: 5px;
+      font-size: 1.1rem;
+    }
+
+    .stars {
+      color: #f5e500;
+      font-size: 1.2rem;
+    }
+
+    /* FOOTER */
+    footer {
+      margin-top: 50px;
+      text-align: center;
+      font-size: 1rem;
+      color: #f5e500;
+      text-shadow: 0 0 10px #00ff6a;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 850px) {
+      .product-container {
+        flex-direction: column;
+      }
+
+      .product-image, .product-info {
+        flex: 1 1 100%;
+      }
+
+      .product-image img {
+        width: 95%;
+      }
+
+      nav {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <h1>RaceCraft Garage</h1>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="shopping guide.html">Shopping Guide</a>
+    <a href="catalog.html">Catalog</a>
+    <a href="profil.html">Profil</a>
+  </nav>
+
+  <div class="section-header">⚡ Produk Unggulan: Red Bull RB19 – Hyper Detail Edition ⚡</div>
+
+  <section class="product-container">
+    <div class="product-image">
+      <img src="imgdieacst/rb19-removebg-preview.png" alt="Redbull RB19 Diecast">
+    </div>
+    <div class="product-info">
+      <div class="product-name">Red Bull Racing RB19 — Max Verstappen Edition</div>
+      <div class="product-price">Rp 3,761,000</div>
+      <div class="product-details">
+        <p>
+          Koleksi diecast paling futuristik dengan presisi tinggi! Dibuat dengan teknologi CNC dan cat metalik yang menyerupai mobil F1 asli.
+          Versi ini adalah edisi terbatas untuk kolektor sejati.
+        </p>
+        <ul>
+          <li>Skala: 1:18</li>
+          <li>Material: Full metal diecast + rubber tire</li>
+          <li>Interior detail, suspensi dan roda dapat digerakkan</li>
+          <li>Include: sertifikat keaslian dan box kaca premium</li>
+          <li>Limited Edition: 1/5000</li>
+        </ul>
+      </div>
+      <button class="buy-button">🛒 Beli Sekarang</button>
+    </div>
+  </section>
+
+  <section class="reviews">
+    <h2>💬 Ulasan Pembeli</h2>
+
+    <div class="review">
+      <strong><span class="stars">★★★★★</span> — Raka Pratama</strong>
+      <p>"Sensasi buka box-nya aja udah kayak buka mobil asli. Detail-nya 100% realistik, dari livery sampai velg!"</p>
+    </div>
+
+    <div class="review">
+      <strong><span class="stars">★★★★☆</span> — Dimas Putra</strong>
+      <p>"Pengiriman aman, packaging premium. Mobilnya berat dan detail banget. Recommended buat kolektor!"</p>
+    </div>
+
+    <div class="review">
+      <strong><span class="stars">★★★★★</span> — Aulia Salsabila</strong>
+      <p>"Cantik banget pas ditaruh di etalase, apalagi kalau kena cahaya — glow-nya real banget."</p>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 RaceCraft Garage | Driven by Passion, Built for Collectors 🚀
+  </footer>
+</body>
+</html>
