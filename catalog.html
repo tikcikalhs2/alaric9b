@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>RaceCraft Garage</title>
+  <style>
+    /* Reset */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #004225;
+      font-family: "Comic Sans MS", cursive, sans-serif;
+      color: #fff;
+      line-height: 1.5;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+
+    h1 {
+      font-family: "Copperplate Gothic Bold", Copperplate, fantasy;
+      font-size: 3rem;
+      margin-bottom: 10px;
+      color: #fff;
+      text-align: center;
+    }
+
+    /* Navbar */
+    nav {
+      display: flex;
+      gap: 30px;
+      margin-bottom: 40px;
+      background: #136533;
+      border-radius: 8px;
+      padding: 10px 30px;
+      box-shadow: 0 0 8px #0f3a1c;
+    }
+
+    nav a {
+      color: #fff;
+      font-size: 1.25rem;
+      font-family: "Comic Sans MS";
+      text-decoration: none;
+      padding: 8px 15px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      cursor: pointer;
+    }
+
+    nav a:hover {
+      background-color: #f5e500; /* kuning highlight */
+      color: #004225;
+      font-weight: bold;
+    }
+
+    /* Section headers */
+    .section-header {
+      width: 100%;
+      max-width: 1300px;
+      background-color: #339966;
+      padding: 15px 0;
+      font-size: 1.8rem;
+      font-family: "Comic Sans MS";
+      text-align: center;
+      border-radius: 6px;
+      box-shadow: 0 0 10px #276b44;
+      margin-bottom: 20px;
+    }
+
+    /* Product Grid */
+    .product-grid {
+      max-width: 1300px;
+      width: 100%;
+      display: flex;
+      gap: 25px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 40px;
+    }
+
+    .product-card {
+      background: #136533;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+      flex: 1 1 245px;
+      max-width: 320px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 15px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: default;
+    }
+
+    .product-card:hover {
+      box-shadow: 0 6px 20px #f5e500;
+      transform: scale(1.05);
+    }
+
+    .product-card img {
+      width: 100%;
+      max-width: 320px;
+      height: auto;
+      margin-bottom: 12px;
+      border-radius: 6px;
+      user-select: none;
+    }
+
+    .product-name {
+      font-family: "Copperplate Gothic Bold", Copperplate, fantasy;
+      font-size: 1.1rem;
+      text-align: center;
+      color: #fff;
+      margin-bottom: 5px;
+      min-height: 48px;
+    }
+
+    .product-price {
+      font-family: "Comic Sans MS";
+      font-size: 1rem;
+      color: #f5e500;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    /* Responsive */
+    @media (max-width: 700px) {
+      nav {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .product-grid {
+        gap: 15px;
+      }
+
+      .product-card {
+        max-width: 90vw;
+        flex: 1 1 90vw;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>RaceCraft Garage</h1>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="shopping guide.html">Shopping Guide</a>
+    <a href="catalog.html">Catalog</a>
+    <a href="profil.html">Profil</a>
+  </nav>
+
+  <section>
+    <h2 class="section-header">Formula 1 Diecast</h2>
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="imgdieacst/rb19-removebg-preview.png" alt="RedBull RB19" />
+        <div class="product-name">RedBull RB19</div>
+        <div class="product-price">Rp 3,761,000</div>
+      </div>
+      <div class="product-card">
+        <img src="imgdieacst/mcl36-removebg-preview.png" alt="McLaren MCL36" />
+        <div class="product-name">McLaren MCL36</div>
+        <div class="product-price">Rp 3,602,000</div>
+      </div>
+      <div class="product-card">
+        <img src="imgdieacst/71JHz-xoZjL-removebg-preview.png" alt="Aston Martin AMR25" />
+        <div class="product-name">Aston Martin AMR25</div>
+        <div class="product-price">Rp 4,094,750</div>
+      </div>
+      <div class="product-card">
+        <img src="imgdieacst/sf25-removebg-preview.png" alt="Ferrari SF25" />
+        <div class="product-name">Ferrari SF25</div>
+        <div class="product-price">Rp 6,381,420</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-header">GT3 Diecast</h2>
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="imgdieacst/__57-removebg-preview.png" alt="Mercedes AMG GT3" />
+        <div class="product-name">Mercedes AMG GT3</div>
+        <div class="product-price">Rp 9,450,000</div>
+      </div>
+      <div class="product-card">
+        <img src="imgdieacst/mclgt3-removebg-preview.png" alt="McLaren 650s GT3" />
+        <div class="product-name">McLaren 650s GT3</div>
+        <div class="product-price">Rp 3,550,000</div>
+      </div>
+      <div class="product-card">
+        <img src="imgdieacst/ss_gt3-removebg-preview.png" alt="Porsche 911 GT3 E" />
+        <div class="product-name">Porsche 911 GT3 E</div>
+        <div class="product-price">Rp 17,923,200</div>
+      </div>
+      <div class="product-card">
+        <img src="imgdieacst/ssgt3ferrari-removebg-preview.png" alt="Ferrari 296 GT3" />
+        <div class="product-name">Ferrari 296 GT3</div>
+        <div class="product-price">Rp 6,895,000</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-header">GT4 Diecast</h2>
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="imgdieacst/amg_gt4-removebg-preview.png" alt="Mercedes AMG GT4" />
+        <div class="product-name">Mercedes AMG GT4</div>
+        <div class="product-price">Rp 1,359,150</div>
+      </div>
+      <div class="product-card">
+        <img src="imgdieacst/mclaren-570S-GT4-designboom-600-removebg-preview.png" alt="McLaren 570s GT4" />
+        <div class="product-name">McLaren 570s GT4</div>
+        <div class="product-price">Rp 2,400,657</div>
+      </div>
+      <div class="product-card">
+        <img src="imgdieacst/pppppppppppppp-removebg-preview.png" alt="Porsche Cayman GT4" />
+        <div class="product-name">Porsche Cayman GT4</div>
+        <div class="product-price">Rp 7,679,000</div>
+      </div>
+      <div class="product-card">
+        <img src="imgdieacst/spark-spark-aston-martin-vantage-amr-gt4-no-210-flying-lizard-motorsport-pirelli-gt4-america-austin-2020-1-removebg-preview.png" alt="Aston Martin Vantage GT4" />
+        <div class="product-name">Aston Martin Vantage GT4</div>
+        <div class="product-price">Rp 6,895,000</div>
+      </div>
+    </div>
+  </section>
+
+</body>
+
+</html>
